@@ -1,5 +1,10 @@
 # Installation
 
+> Note: This book assumes basic familiarity with the command line.
+
+**Important Note:** Make sure that you have a C/C++ compiler installed, since
+Carp compiles to C and then it calls a C/C++ compiler to output a native binary.
+
 ## Binaries
 
 _TODO: When 0.4 is released_
@@ -14,7 +19,7 @@ You will need the following:
 
 _Assuming you have `yay` installed_
 ```sh
-yay -S carp-git
+$ yay -S carp-git
 ```
 
 Then set in your shell configuration file an environment variable that tells the
@@ -31,14 +36,14 @@ need:
  - Git installed
  - Stack installed
 
-### UNIX and UNIX-like
-
-Assuming you're know the basics of terminals, let's start:
+Let's start!!
 
 **Cloning the repository:**
 ```sh
 git clone https://github.com/carp-lang/Carp
 ```
+
+### UNIX and UNIX-like
 
 **Building:**
 
@@ -47,17 +52,17 @@ folder.
 
 ```sh
 # Go to the Carp folder
-cd Carp
+$ cd Carp
 
 # Build AND install command
-stack install
+$ stack install
 ```
 
 **Setting the core library:**
 ```sh
 # Putting in the appropriated place
-mkdir ~/.local/lib/carp
-cp -r core ~/.local/lib/carp
+$ mkdir ~/.local/lib/carp
+$ cp -r core ~/.local/lib/carp
 ```
 
 If your ~/.local/bin is not in the PATH, add it in your shell configuration file

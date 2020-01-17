@@ -6,6 +6,9 @@ performance sensitive use cases like games, sound synthesis and visualizations.
 It uses a ownership system to achieve automatic and deterministic memory
 management similar of the [Rust programming language](https://www.rust-lang.org/).
 
+Although it looks like a lisp, it is not. The runtime semantics are much closer
+to those of ML or Rust.
+
 ## Who Carp Is For
 
 TODO
