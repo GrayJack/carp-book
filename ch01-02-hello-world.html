@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>The Carp Programming Language - The Carp Programming Language</title>
+        <title>Hello World - The Carp Programming Language</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded affix "><a href="title_page.html" class="active">The Carp Programming Language</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introdution</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello World</a></li></ol></li></ol>
+                <ol class="chapter"><li class="expanded affix "><a href="title_page.html">The Carp Programming Language</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introdution</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html" class="active"><strong aria-hidden="true">1.2.</strong> Hello World</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -152,22 +152,70 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#the-carp-programming-language" id="the-carp-programming-language">The Carp Programming Language</a></h1>
-<p>by <em>Eric Shimizu Karbstein</em></p>
-<p>This book is a working in progress, I will try to keep up-to-date with the
-language.</p>
-<p>This version of the text assumes you're using the <a href="https://github.com/carp-lang/Carp">master branch</a> of the language (In the future it will change to version 0.4).</p>
+                        <h1><a class="header" href="#hello-world" id="hello-world">Hello, World!</a></h1>
+<p>Now that you have Carp installed, lets start with the tradition of writing a
+hello world program. It's a simple program that output in the terminal <code>Hello, World!</code> and that is it.</p>
+<h2><a class="header" href="#creating-a-project-directory" id="creating-a-project-directory">Creating a Project Directory</a></h2>
+<p>Start by making a directory to store your Carp code. It doesn't matter where,
+but for this book exercises we do recommend to crate a directory in your home
+directory just to put all book projects.</p>
+<p>For UNIX/UNIX-like:</p>
+<pre><code class="language-sh">$ mkdir ~/book_projects
+$ cd  ~/book_projects
+$ mkdir hello_world
+$ cd hello_world
+</code></pre>
+<p>For Windows:</p>
+<pre><code class="language-cmd">&gt; mkdir &quot;%USERPROFILE%\book_projects&quot;
+&gt; cd /d &quot;%USERPROFILE%\book_projects&quot;
+&gt; mkdir hello_world
+&gt; cd hello_world
+</code></pre>
+<h2><a class="header" href="#writing-and-running-a-carp-program" id="writing-and-running-a-carp-program">Writing and Running a Carp Program</a></h2>
+<p>The next step is to create a new file called <em>Main.carp</em>.</p>
+<blockquote>
+<p>Note that Carp files end with <code>.carp</code>. If you are using more than one word in
+your filename, write the first letter of each word as upper case, for example,
+use <em>HelloWorld.carp</em> instead of <em>Helloworld.carp</em>.</p>
+</blockquote>
+<p>Now open the <em>Main.carp</em> file you just created and enter the code in Listing 1-1</p>
+<pre><code class="language-clj">(defn main []
+    (println* &quot;Hello, World!&quot;))
+</code></pre>
+<p><span class="caption">Listing 1-1: A program that prints <code>Hello, world!</code></span></p>
+<p>Save the file and go to the terminal window and enter the following command:</p>
+<pre><code class="language-sh">carp -x Main.carp
+</code></pre>
+<p>The <code>-x</code> flag tells the compiler to compile and run the program.</p>
+<h2><a class="header" href="#anatomy-of-a-carp-program" id="anatomy-of-a-carp-program">Anatomy of a Carp Program</a></h2>
+<p>Let's understand what is going on this program.</p>
+<pre><code class="language-clj">(defn main []
+                              )
+</code></pre>
+<p>Here we have tree things to look at. The first is the <em>defn</em>, it is a keyword
+that let us define a new function, it is followed by a function name, in this
+case it is <em>main</em>, then followed by the parameter list (the <em>[]</em> part), the list is empty because this function does not receive a parameter, if the parameter list was not empty it would have something inside the square brackets.</p>
+<p>The <em>main</em> function is special, because it is the first part of the code that
+runs in every executable Carp program.</p>
+<p>Inside of the <em>main</em> function we have:</p>
+<pre><code class="language-clj">
+    (println* &quot;Hello, World!&quot;)
+</code></pre>
+<p>This line prints text to the screen. There is some details in here:</p>
+<p>The <em>println*</em> here is a Carp macro. Although it is something different than a
+function, the call syntax is the same, you cannot tell the difference until you
+look into the function/macro implementation. And everything between e double quotes (<code>&quot;</code>) is a string literal.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-
-                        
-                            <a rel="next" href="ch00-00-introduction.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                            <a rel="prev" href="ch01-01-installation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
                             </a>
+                        
+
                         
 
                         <div style="clear: both"></div>
@@ -177,11 +225,11 @@ language.</p>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-
-                
-                    <a href="ch00-00-introduction.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                    <a href="ch01-01-installation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
                     </a>
+                
+
                 
             </nav>
 

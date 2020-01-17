@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded affix "><a href="title_page.html">The Carp Programming Language</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introdution</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html" class="active"><strong aria-hidden="true">1.1.</strong> Installation</a></li></ol></li></ol>
+                <ol class="chapter"><li class="expanded affix "><a href="title_page.html">The Carp Programming Language</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introdution</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html" class="active"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello World</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -153,6 +153,11 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#installation" id="installation">Installation</a></h1>
+<blockquote>
+<p>Note: This book assumes basic familiarity with the command line.</p>
+</blockquote>
+<p><strong>Important Note:</strong> Make sure that you have a C/C++ compiler installed, since
+Carp compiles to C and then it calls a C/C++ compiler to output a native binary.</p>
 <h2><a class="header" href="#binaries" id="binaries">Binaries</a></h2>
 <p><em>TODO: When 0.4 is released</em></p>
 <h2><a class="header" href="#arch-user-repository" id="arch-user-repository">Arch User Repository</a></h2>
@@ -164,7 +169,7 @@ still learning, users of the Linux distribution.</p>
 <li>Yay installed</li>
 </ul>
 <p><em>Assuming you have <code>yay</code> installed</em></p>
-<pre><code class="language-sh">yay -S carp-git
+<pre><code class="language-sh">$ yay -S carp-git
 </code></pre>
 <p>Then set in your shell configuration file an environment variable that tells the
 Carp compiler where to find the core library:</p>
@@ -179,24 +184,24 @@ need:</p>
 <li>Git installed</li>
 <li>Stack installed</li>
 </ul>
-<h3><a class="header" href="#unix-and-unix-like" id="unix-and-unix-like">UNIX and UNIX-like</a></h3>
-<p>Assuming you're know the basics of terminals, let's start:</p>
+<p>Let's start!!</p>
 <p><strong>Cloning the repository:</strong></p>
 <pre><code class="language-sh">git clone https://github.com/carp-lang/Carp
 </code></pre>
+<h3><a class="header" href="#unix-and-unix-like" id="unix-and-unix-like">UNIX and UNIX-like</a></h3>
 <p><strong>Building:</strong></p>
 <p>It may take a while. This will install the binaries inside <code>$HOME/.local/bin</code>
 folder.</p>
 <pre><code class="language-sh"># Go to the Carp folder
-cd Carp
+$ cd Carp
 
 # Build AND install command
-stack install
+$ stack install
 </code></pre>
 <p><strong>Setting the core library:</strong></p>
 <pre><code class="language-sh"># Putting in the appropriated place
-mkdir ~/.local/lib/carp
-cp -r core ~/.local/lib/carp
+$ mkdir ~/.local/lib/carp
+$ cp -r core ~/.local/lib/carp
 </code></pre>
 <p>If your ~/.local/bin is not in the PATH, add it in your shell configuration file</p>
 <pre><code class="language-sh">export PATH=$PATH:~/.local/bin
@@ -219,6 +224,10 @@ tell where the core library is.</p>
                         
 
                         
+                            <a rel="next" href="ch01-02-hello-world.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
 
                         <div style="clear: both"></div>
                     </nav>
@@ -232,6 +241,10 @@ tell where the core library is.</p>
                     </a>
                 
 
+                
+                    <a href="ch01-02-hello-world.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 
