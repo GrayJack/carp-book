@@ -327,7 +327,7 @@ a chapter name.</p>
 ;; With parameter
 (help &quot;language&quot;)
 </code></pre>
-<p><strong>Type:</strong> It receive a symbol and it gives the type of that</p>
+<p><strong>Type:</strong> It receive a symbol and it gives the type of that symbol</p>
 <pre><code class="language-clj">(def a 10)
 (type a)
 </code></pre>
@@ -351,6 +351,27 @@ Defined at line 1, column 1 in 'REPL'
 the generated files and binaries will be on a directory called <em>out</em>, but it can
 be changed in the project configuration.</p>
 <h3><a class="header" href="#configuring-the-project" id="configuring-the-project">Configuring the project</a></h3>
+<p>This part is quite simple, following the same pattern in the toplevel of the
+project:</p>
+<pre><code class="language-clj">(Project.config &lt;setting&gt; &lt;value&gt;)
+</code></pre>
+<p>To configure more than one setting, just keep adding the same pattern one more
+time in the next line.</p>
+<p>Here is the setting options and what it takes as values:</p>
+<ul>
+<li><code>&quot;cflag&quot;</code>: Takes a <em>String</em>: Add a flag to the C compiler.</li>
+<li><code>&quot;libflag&quot;</code>: Takes a <em>String</em>: Add a library flag to the compiler.</li>
+<li><code>&quot;compiler&quot;</code>: Takes a <em>String</em>: Set what compiler should be run with the <code>build</code> command.</li>
+<li><code>&quot;title&quot;</code>: Takes a <em>String</em>: Set the title of the current project (the final binary name will be this string)</li>
+<li><code>&quot;prompt&quot;</code>: Takes a <em>String</em>: Set the prompt in the REPL</li>
+<li><code>&quot;search-path&quot;</code>: Takes a <em>String</em>: Add a path where the Carp compiler will look for '*.carp' files</li>
+<li><code>&quot;output-directory&quot;</code>: Takes a <em>String</em>: Where to put build artifacts</li>
+<li><code>&quot;docs-directory&quot;</code>: Takes a <em>String</em>: Where to put generated docs</li>
+<li><code>&quot;generate-only&quot;</code>: Takes a <em>Bool</em>: Set to true if you don't want to run the C compiler when building</li>
+<li><code>&quot;echo-c&quot;</code>: Takes a <em>Bool</em>: When a form is defined using 'def' or 'defn' its C code will be printed</li>
+<li><code>&quot;echo-compiler-cmd&quot;</code>: Takes a <em>Bool</em>: When building the project the command for running the C compiler will be printed</li>
+<li><code>&quot;print-ast&quot;</code>: Takes a <em>Bool</em>: The 'info' command will print the AST for a binding</li>
+</ul>
 <h3><a class="header" href="#compiler-flags" id="compiler-flags">Compiler flags</a></h3>
 
                     </main>
