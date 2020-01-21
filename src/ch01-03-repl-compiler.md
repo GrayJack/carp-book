@@ -36,7 +36,7 @@ a chapter name.
 (help "language")
 ```
 
-**Type:** It receive a symbol and it gives the type of that
+**Type:** It receive a symbol and it gives the type of that symbol
 
 ```clj
 (def a 10)
@@ -72,5 +72,28 @@ the generated files and binaries will be on a directory called _out_, but it can
 be changed in the project configuration.
 
 ### Configuring the project
+
+This part is quite simple, following the same pattern in the toplevel of the
+project:
+```clj
+(Project.config <setting> <value>)
+```
+
+To configure more than one setting, just keep adding the same pattern one more
+time in the next line.
+
+Here is the setting options and what it takes as values:
+ - `"cflag"`: Takes a _String_: Add a flag to the C compiler.
+ - `"libflag"`: Takes a _String_: Add a library flag to the compiler.
+ - `"compiler"`: Takes a _String_: Set what compiler should be run with the `build` command.
+ - `"title"`: Takes a _String_: Set the title of the current project (the final binary name will be this string)
+ - `"prompt"`: Takes a _String_: Set the prompt in the REPL
+ - `"search-path"`: Takes a _String_: Add a path where the Carp compiler will look for '\*.carp' files
+ - `"output-directory"`: Takes a _String_: Where to put build artifacts
+ - `"docs-directory"`: Takes a _String_: Where to put generated docs
+ - `"generate-only"`: Takes a _Bool_: Set to true if you don't want to run the C compiler when building
+ - `"echo-c"`: Takes a _Bool_: When a form is defined using 'def' or 'defn' its C code will be printed
+ - `"echo-compiler-cmd"`: Takes a _Bool_: When building the project the command for running the C compiler will be printed
+ - `"print-ast"`: Takes a _Bool_: The 'info' command will print the AST for a binding
 
 ### Compiler flags
