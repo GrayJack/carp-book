@@ -7,5 +7,5 @@ installed.
 
 Then:
 ```sh
-mdbook build
+mdbook build && cp highlight.js book/highlight.js
 ```
