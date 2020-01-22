@@ -97,3 +97,8 @@ Here is the setting options and what it takes as values:
  - `"print-ast"`: Takes a _Bool_: The 'info' command will print the AST for a binding
 
 ### Compiler flags
+ - `-b`: Just compile the files
+ - `-x`: Compile and run the files
+ - `--optimize`: Compile the generated C file with `-O3` optimization level
+ - `--check`: Just check the files if they are valid Carp and report all errors
+ - `--generate-only`: Only generate the C file.
