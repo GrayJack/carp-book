@@ -15,7 +15,7 @@ still learning, users of the Linux distribution.
 
 You will need the following:
  - A internet connection
- - Yay installed
+ - [Yay](https://github.com/Jguer/yay) or any other AUR helper installed
 
 _Assuming you have `yay` installed_
 ```sh
@@ -33,8 +33,8 @@ Since the language is in a early stages we'll teach how to install from the
 [Carp Github source tree](https://github.com/carp-lang/Carp). For that you'll
 need:
  - A internet connection
- - Git installed
- - Stack installed
+ - [Git](https://git-scm.com/) installed
+ - [Stack](https://haskellstack.org/) installed
 
 Let's start!!
 
